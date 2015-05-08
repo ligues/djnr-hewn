@@ -1,0 +1,92 @@
+<header class="">
+    <div class="column column_left">
+    	<div class="logo black uppercase"><a href="home" id="btn_home">HEWN</a></div>
+		<div class="dotted">
+		    <nav class="content_dotted">
+		        <a href="services" id="btn_services" class="bold uppercase">Services</a>
+		        <a href="projects" id="btn_projects" class="bold uppercase">Projects</a><br/>
+		        <a href="about" id="btn_about" class="bold uppercase">About</a>
+		        <a href="store" id="btn_store" class="bold uppercase active_link">Store</a>
+		    </nav>
+		    <div class="address">
+		        <span>+1 512_386_6404</span>
+		        <a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a>
+		    </div>
+		</div>
+        
+    </div>
+    <div class="column column_center"></div>
+    <div class="column column_right">
+        
+        <div class="project_dotted dotted_top">
+        	<div class="content_dotted uppercase" id="store_title">
+				Hand-crafted objects <br> made to endure
+			</div>
+			<div><a class="project_map_back" href="#">Back</a></div>
+        </div>
+    </div>
+
+    <div class="dotted_project_container">
+    	<div class="dotted_project_left" id="product_info"></div>
+    	<div class="dotted_project_center"></div>
+    	<div class="dotted_project_right"><a href="#" class="uppercase" data-product="0" id="buy_product"></a></div>
+    </div>
+    <div class="dotted_project_right_out"></div>
+</header> 
+
+<div id="store_products"></div>
+
+<div id="store_subcategories"></div>
+
+
+<div class="store_categories">
+{{#each store}}
+	<div class="category">
+		<div class="category_bg" style="background-image:url({{this.image}})">
+			<div class="front_link">
+				<a href="#" data-category="{{this.id}}" class="bold uppercase link_category">
+					{{this.category}}
+				</a>
+			</div>
+			<div class="green"></div>
+		</div>
+	</div>
+{{/each}}
+</div>
+
+
+
+
+<footer>
+    <div class="footer_container">
+    	<div class="column column_left">
+       		<div class="logo black uppercase"><a href="#"><span class="medium">&copy; 2015</span> HEWN</a></div>
+	        <div class="dotted">
+	            <div class="content_dotted">
+					730_Shady Lane<br/>
+					Austin_TX_78702
+				</div>
+	        </div>
+	    </div>
+	    <div class="column column_center"></div>
+	    <div class="column column_right">
+	        
+	        <div class="dotted">
+	        	<div class="content_dotted">
+					<span>+1 512_386_6404</span>
+            		<a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a>
+				</div>
+	        </div>
+	    </div>
+	    <div class="column column_center"></div>
+	    <div class="column column_right">
+	        
+	        <div class="dotted">
+	        	<div class="content_dotted">
+					Follow us on <a href="#">Twitter</a> <br/>
+					Like us on <a href="#">Facebook</a>  
+				</div>
+	        </div>
+	    </div>
+	</div>
+</footer> 

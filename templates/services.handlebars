@@ -1,0 +1,142 @@
+<header class="fixed"  style="position:fixed; top:0;left:0; background-color:#BDBEC0; height:210px">
+    <div class="column column_left">
+        <div class="logo black uppercase"><a href="home" id="btn_home">HEWN</a></div>
+		<div class="dotted">
+		    <nav class="content_dotted">
+		        <a href="services" id="btn_services" class="bold uppercase active_link">Services</a>
+		        <a href="projects" id="btn_projects" class="bold uppercase">Projects</a><br/>
+		        <a href="about" id="btn_about" class="bold uppercase">About</a>
+		        <a href="store" id="btn_store" class="bold uppercase">Store</a>
+		    </nav>
+		    <div class="address">
+		        <span>+1 512_386_6404</span>
+		        <a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a>
+		    </div>
+		</div>
+    </div>
+    <div class="column column_center"></div>
+    <div class="column column_right">
+        
+        <div class="dotted">
+        	<div class="content_dotted">
+				350 High-Precision<br/>
+				Services
+			</div>
+			<div class="letter_links">
+				<a href="#" id="letter_A" class="active_link">A</a>
+				<a href="#" id="letter_B">B</a>
+				<a href="#" id="letter_C">C</a>
+				<a href="#" id="letter_D">D</a>
+				<a href="#" id="letter_E">E</a>
+				<a href="#" id="letter_F">F</a>
+				<a href="#" id="letter_G">G</a>
+				<a href="#" id="letter_H">H</a>
+				<a href="#" id="letter_I">I</a>
+				<a href="#" id="letter_J">J</a>
+				<a href="#" id="letter_K">K</a>
+				<a href="#" id="letter_L">L</a>
+				<a href="#" id="letter_M">M</a>
+				<a href="#" id="letter_N">N</a>
+				<a href="#" id="letter_O">O</a>
+				<a href="#" id="letter_P">P</a>
+				<a href="#" id="letter_Q">Q</a>
+				<a href="#" id="letter_R">R</a>
+				<a href="#" id="letter_S">S</a>
+				<a href="#" id="letter_T">T</a>
+				<a href="#" id="letter_U">U</a>
+				<a href="#" id="letter_V">V</a>
+				<a href="#" id="letter_W">W</a>
+				<a href="#" id="letter_X">X</a>
+				<a href="#" id="letter_Y">Y</a>
+				<a href="#" id="letter_Z">Z</a>
+			</div>
+        </div>
+    </div>
+
+    <div class="services_list" id="letter_header" style="margin:0px 0px 0px -20px">
+		<div class="column column_left">
+	        <div class="single_dotted"></div>
+	    </div>
+	    <div class="column column_center"></div>
+	    <div class="column column_right"> 
+	    	<div class="letter">
+	    		A
+	    	</div>
+	    	<div class="single_dotted"></div>
+	    </div>
+	</div>
+
+</header> 
+
+
+
+<div class="container" style="">
+
+
+	<div class="services_list">
+		{{#each services}}
+		<div class="service_container">
+			<div class="letter_group" style="displays:{{this.letter_hide}}">
+				<div class="column column_left">
+			        
+			    </div>
+			    <div class="column column_center" style="background:none"></div>
+			    <div class="column column_right"> 
+			    	<div class="letter letter_point" id="scroll_letter_{{this.service_letter}}" data-letter="letter_{{this.service_letter}}">
+			    		{{this.service_letter}}
+			    	</div>
+			    	<div class="single_dotted"></div>
+			    </div>
+			</div>
+		    <div>
+		    	{{#each this.service}}
+				<div class="service_text">
+					<div style="margin-bottom:10px">__</div>
+					<div>
+						<span>{{this.service_title}}&#172;</span> <span class="medium">{{this.service_description}}</span>
+					</div>
+				</div>
+					{{#if this.service_image}}
+					<div class="image_letter" style="background-image:url({{this.service_image.url}})"></div>
+					{{/if}}
+				{{/each}}		
+			</div>
+		</div>
+		{{/each}}
+	</div>
+
+<footer>
+    <div class="footer_container">
+    	<div class="column column_left">
+       		<div class="logo black uppercase"><a href="#"><span class="medium">&copy; 2015</span> HEWN</a></div>
+	        <div class="dotted">
+	            <div class="content_dotted">
+					730_Shady Lane<br/>
+					Austin_TX_78702
+				</div>
+	        </div>
+	    </div>
+	    <div class="column column_center"></div>
+	    <div class="column column_right">
+	        
+	        <div class="dotted">
+	        	<div class="content_dotted">
+					<span>+1 512_386_6404</span>
+            		<a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a>
+				</div>
+	        </div>
+	    </div>
+	    <div class="column column_center"></div>
+	    <div class="column column_right">
+	        
+	        <div class="dotted">
+	        	<div class="content_dotted">
+					Follow us on <a href="#">Twitter</a> <br/>
+					Like us on <a href="#">Facebook</a>  
+				</div>
+	        </div>
+	    </div>
+	</div>
+</footer> 
+
+</div>

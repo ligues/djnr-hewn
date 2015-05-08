@@ -1,0 +1,12 @@
+{{#each subcategories}}
+	<div class="subcategory">
+		<div class="category_bg" style="background-image:url({{this.image}})">
+			<div class="front_link">
+				<a href="#" data-category="{{this.parent}}" data-subcategory="{{this.id}}" class="bold uppercase link_subcategories">
+					{{this.category}}
+				</a>
+			</div>
+			<div class="green"></div>
+		</div>
+	</div>
+{{/each}}

@@ -1,0 +1,77 @@
+<header class="fixed_project">
+	<a class="fullscreen">Fullscreen [<span>+</span>]</a>
+    <div class="column column_left">
+    	<div class="logo black uppercase"><a href="home" id="btn_home">HEWN</a></div>
+		<div class="dotted">
+		    <nav class="content_dotted">
+		        <a href="services" id="btn_services" class="bold uppercase">Services</a>
+		        <a href="projects" id="btn_projects" class="bold uppercase active_link">Projects</a><br/>
+		        <a href="about" id="btn_about" class="bold uppercase">About</a>
+		        <a href="store" id="btn_store" class="bold uppercase">Store</a>
+		    </nav>
+		    <div class="address">
+		        <span>+1 512_386_6404</span>
+		        <a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a>
+		    </div>
+		</div>
+        
+    </div> 
+    <div class="column column_center"></div>
+    <div class="column column_right">
+        
+        <div class="project_dotted dotted_top">
+        	<div class="content_dotted" id="project_title">
+				{{title}}
+			</div>
+        </div> 
+    </div> 
+
+    <div class="dotted_project_container">
+    	<div class="dotted_project_left"><a href="#" id="project_services">Services + Spec</a></div>
+    	<div class="dotted_project_center"></div>
+    	<div class="dotted_project_right"><a href="#" id="project_all">All Projects</a></div>
+    </div>
+    <div class="dotted_project_right_out"></div>
+</header> 
+
+<div id="navigation_guide">
+	<div class="arrows">
+		<span class="up"></span>
+		<span class="left"></span>
+		<span class="bottom"></span>
+		<span class="right"></span> 
+	</div>
+	<div class="dotted_v"></div>
+	<div class="text">
+		<strong>TOOL TIP</strong><br>
+		<p>You can  also navigate with Arrow Keys</p>
+	</div>
+</div>
+
+<div class="arrow left"></div>
+<div class="arrow right"></div>
+<div class="arrow down"></div>
+
+<div class="projects_gradient">
+	<div class="gradient"></div>
+	<div id="updown" style="position:absolute;width:100%;height:100%;">
+		{{#each projects}}
+		<div class="slider_containers" style="width:100%;height:100%;" id="slider_{{this.id}}">
+		    <div class="project_slider" id="project_slider_{{this.id}}" data-title="{{this.content}}" class="section project" style="font-size:0;width: 100%; height:100%;" data-services= "{{#each this.services}}{{this.service_name}},{{/each}}">
+		    	{{#each this.pictures}}
+		        <div class="project_slides" style="background-image:url({{this.picture.url}});"></div>
+		        {{/each}}
+		    </div>
+		</div>
+	    {{/each}}
+	</div>
+</div>
+
+<div class="project_services_overlay">
+	<div id="project_services_container"></div>
+</div>
+
+<div class="project_map overlay-scale">
+	<div id="map"></div>
+	<div><a class="project_map_back" id="project_map_back" href="#"></div>
+</div>

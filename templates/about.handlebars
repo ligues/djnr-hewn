@@ -1,0 +1,124 @@
+<header class="fixed"  style="position:fixed; top:0;left:0; background-color:#BDBEC0; height:210px">
+    <div class="column column_left">
+    	<div class="logo black uppercase"><a href="home" id="btn_home">HEWN</a></div>
+		<div class="dotted">
+		    <nav class="content_dotted">
+		        <a href="services" id="btn_services" class="bold uppercase">Services</a>
+		        <a href="projects" id="btn_projects" class="bold uppercase">Projects</a><br/>
+		        <a href="about" id="btn_about" class="bold uppercase active_link">About</a>
+		        <a href="store" id="btn_store" class="bold uppercase">Store</a>
+		    </nav>
+		    <div class="address">
+		        <span>+1 512_386_6404</span>
+		        <a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a>
+		    </div>
+		</div>
+        
+    </div>
+    <div class="column column_center"></div>
+    <div class="column column_right">
+        
+        <div class="dotted">
+        	<div class="content_dotted">
+				Veritable Experience, Encyclopedic <br>
+				Knowledge and Master Craftsmanship
+			</div>
+			<div class="about_links">
+				<a href="#" id="shop_link" >Shop</a>
+				<a href="#" id="team_link" >Personnel</a>
+			</div>
+        </div>
+    </div>
+
+</header> 
+
+<div class="container" >
+
+	<div class="services_list" style="margin-bottom:10px">
+		<div class="column column_left">
+	        
+	    </div>
+	    <div class="column column_center" style="background:none"></div>
+	    <div class="column column_right"> 
+	    	<div class="letter">
+	    		Our Shop
+	    	</div>
+	    	<div class="single_dotted"></div>
+	    </div>
+	</div>
+
+	<div class="about_shop_content">
+		<div>__</div>
+		{{content}}
+	</div>
+
+	<div style="position:relative">
+		<div id="about_slides">
+			{{#each slider_pictures}}
+		    <div class="about_slide" style="height:500px;background-size:cover;background-image:url({{this.picture.url}});"></div>
+		    {{/each}}
+		</div>
+		<div class="arrow left" style="z-index:0"></div>
+		<div class="arrow right" style="z-index:0"></div>
+	</div>
+
+
+
+	<div class="services_list" style="margin-bottom:10px;margin-top:30px;">
+		<div class="column column_left">
+	        
+	    </div>
+	    <div class="column column_center" style="background:none"></div>
+	    <div class="column column_right"> 
+	    	<div class="letter">
+	    		Our Team
+	    	</div>
+	    	<div class="single_dotted"></div>
+	    </div>
+	</div>
+
+	<div class="about_team">
+		<div>__</div>
+		<ul>
+			{{#each team_members}}
+			<li>{{this.name}}<br/>{{this.position}}</li>
+			{{/each}}
+		</ul>
+	</div>
+
+
+	<footer>
+	    <div class="footer_container">
+	    	<div class="column column_left">
+	       		<div class="logo black uppercase"><a href="#"><span class="medium">&copy; 2015</span> HEWN</a></div>
+		        <div class="dotted">
+		            <div class="content_dotted">
+						730_Shady Lane<br/>
+						Austin_TX_78702
+					</div>
+		        </div>
+		    </div>
+		    <div class="column column_center"></div>
+		    <div class="column column_right">
+		        
+		        <div class="dotted">
+		        	<div class="content_dotted">
+						<span>+1 512_386_6404</span>
+	            		<a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a>
+					</div>
+		        </div>
+		    </div>
+		    <div class="column column_center"></div>
+		    <div class="column column_right">
+		        
+		        <div class="dotted">
+		        	<div class="content_dotted">
+						Follow us on <a href="#">Twitter</a> <br/>
+						Like us on <a href="#">Facebook</a>  
+					</div>
+		        </div>
+		    </div>
+		</div>
+	</footer> 
+
+</div>
