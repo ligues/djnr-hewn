@@ -570,7 +570,14 @@ footer .column_right .dotted{
 	z-index: 500;
 	background-color: #3A3A3C;
 	opacity: 0;
+	display: none;
 }
+
+.project_map{
+	display: block;
+	z-index: 0;
+}
+
 
 #project_services_container{
 	position: absolute;
@@ -596,6 +603,7 @@ footer .column_right .dotted{
 .project_slides{
 	background-size:cover; 
 	display:inline-block;
+	background-position: center center;
 }
 
 .project_slides.portrait{

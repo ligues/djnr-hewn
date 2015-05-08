@@ -357,6 +357,9 @@ function set_page_projects(){
 					h = window.innerHeight;
 					w = window.innerWidth;		  				
 
+					$('#updown').width(w)
+					$('#updown').height(h)
+
 		  			jQuery.each($('.project_slider'), function() {
 
 		  				$('#'+this.id).height(h)
@@ -364,12 +367,12 @@ function set_page_projects(){
 						
 					});
 
-					$('.project_slider,.project_slides').width(w);
-					$('.project_slider,.project_slides').height(h);
+					$('.projects_gradient, .slider_containers, .project_slider,.project_slides').width(w);
+					$('.projects_gradient, .slider_containers, .project_slider,.project_slides').height(h);
 
 					$('.project_map,#map').width(w);
 					$('.project_map,#map').height(h);
-		        	
+
 		  		});
 
 				$('.project_slider,.project_slides').width(w);
@@ -380,35 +383,6 @@ function set_page_projects(){
 
 
 				current_project = 0;
-
-				$('#updown').carouFredSel({
-	        		circular: true,
-	        		direction: "up",
-	        		infinite:true,
-	        		auto:false,
-	        		mousewheel: true,
-	        		responsive:true,
-	        		width: w,
-	        		height:h,
-					items: {
-						visible: 1,
-						width: w,
-						height: h
-					},
-					scroll: {
-						easing: "easeInOutCubic",
-						//easing: "easeOutCubic",
-						//fx              : "linear",
-        				duration        : 500,
-        				wipe        : true,
-        				mousewheel  : true
-
-					},
-					swipe: {
-			          onTouch: true
-			        }
-	        	});
-
 
 				$('.arrow.down').click(function(e){
 					e.preventDefault();
@@ -462,6 +436,31 @@ function set_page_projects(){
 		        	});
 
 				});
+
+				$('#updown').carouFredSel({
+	        		circular: true,
+	        		direction: "up",
+	        		infinite:true,
+	        		auto:false,
+	        		mousewheel: true,
+	        		responsive:true,
+	        		width: '100%',
+					items: {
+						visible: 1,
+						width: '100%',
+						height:'variable'
+					},
+					scroll: {
+						easing: "easeInOutCubic",
+						//easing: "easeOutCubic",
+						//fx              : "linear",
+        				duration        : 500,
+        				wipe        : true,
+        				mousewheel  : true
+
+					},
+					swipe: true
+	        	});
 				
 
 				if((w/h)<1.33){
