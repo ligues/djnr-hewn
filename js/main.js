@@ -109,6 +109,8 @@ function set_buttons(){
 }
 
 function set_page_home(){
+	$('.loader').fadeIn();
+
 	v = Math.floor((Math.random() * 1000) + 1)
 	var timer;
 	$.ajax({
@@ -118,14 +120,12 @@ function set_page_home(){
 		success: function(result) {
 			getTemplateAjax( theme + '/templates/home.handlebars?v='+v, function(template) {
 				data = jQuery.parseJSON(result);
-		  		$('body').html(template(data)).hide(0).fadeIn('slow');
+		  		$('.page').html(template(data)).hide(0).fadeIn('slow');
 		  		resize_home();
 				front_links();
 				set_buttons();
 
 				$(window).bind("resize", resize_home);
-
-				$('.loader').fadeOut(1200);
 
 				$('body').scroll(function() {
 			        var top = $(window).scrollTop();
@@ -134,6 +134,8 @@ function set_page_home(){
 			            $("#navigation_guide").fadeOut();
 			        }
 			    });
+
+			    $('.loader').fadeOut(1200);
 
 			})
 		}
@@ -160,6 +162,7 @@ function stop_slider(){
 }
 
 function set_page_about(){
+	$('.loader').fadeIn();
 	v = Math.floor((Math.random() * 1000) + 1)
 	$.ajax({
 		url:  WP+"/wp-admin/admin-ajax.php",
@@ -168,7 +171,7 @@ function set_page_about(){
 		success: function(result) {
 			getTemplateAjax( theme + '/templates/about.handlebars?v='+v, function(template) {
 				data = jQuery.parseJSON(result);
-		  		$('body').html(template(data)).hide(0).fadeIn('slow');
+		  		$('.page').html(template(data)).hide(0).fadeIn('slow');
 				set_buttons();
 
 				h = window.innerHeight;
@@ -252,6 +255,7 @@ function set_page_about(){
 				
 				)
  
+ 				$('.loader').fadeOut(1200);
 				
 			})
 		}
@@ -261,6 +265,7 @@ function set_page_about(){
 }
 
 function set_page_services(){
+	$('.loader').fadeIn();
 	v = Math.floor((Math.random() * 1000) + 1)
 	$.ajax({
 		url:  WP+"/wp-admin/admin-ajax.php",
@@ -269,7 +274,7 @@ function set_page_services(){
 		success: function(result) {
 			getTemplateAjax( theme + '/templates/services.handlebars?v='+v, function(template) {
 				data = jQuery.parseJSON(result);
-		  		$('body').html(template(data)).hide(0).fadeIn('slow');
+		  		$('.page').html(template(data)).hide(0).fadeIn('slow');
 		  		set_buttons();
 
 				w = $(window).width();
@@ -327,6 +332,8 @@ function set_page_services(){
 					}
 				});
 
+				$('.loader').fadeOut(1200);
+
 			})
 		}
 	});	
@@ -335,7 +342,7 @@ function set_page_services(){
 }
 
 function set_page_projects(){
-
+	$('.loader').fadeIn();
 	v = Math.floor((Math.random() * 1000) + 1)
 
 	$.ajax({
@@ -345,7 +352,7 @@ function set_page_projects(){
 		success: function(result) {
 			getTemplateAjax( theme + '/templates/projects.handlebars?v='+v, function(template) {
 				data = jQuery.parseJSON(result);
-		  		$('body').html(template(data)).hide(0).fadeIn('slow');
+		  		$('.page').html(template(data)).hide(0).fadeIn('slow');
 		  		set_buttons();
 
 		  		//$(window).bind("resize", resize_projects_bg);
@@ -564,7 +571,8 @@ function set_page_projects(){
 				    }
 				    e.preventDefault(); // prevent the default action (scroll / move caret)
 				});
-
+				
+				$('.loader').fadeOut(1200);
 
 			})
 		}
@@ -572,6 +580,7 @@ function set_page_projects(){
 }
 
 function set_page_store(){
+	$('.loader').fadeIn();
 	v = Math.floor((Math.random() * 1000) + 1)
 	var timer;
 	$.ajax({
@@ -583,14 +592,16 @@ function set_page_store(){
 				data = jQuery.parseJSON(result);
 				store = jQuery.parseJSON(result);
 
-		  		$('body').html(template(data)).hide(0).fadeIn('slow');
+		  		$('.page').html(template(data)).hide(0).fadeIn('slow');
 
 		  		categories_height();
-		  		set_buttons();
+		  		set_buttons(); 
 		  		front_links()
 
 		  		$(window).bind("resize", categories_height);
 		  		$(window).bind("resize", front_links);
+
+		  		$('.loader').fadeOut(1200);
 
 		  		$('.link_category').click(function(e){
 		  			e.preventDefault();

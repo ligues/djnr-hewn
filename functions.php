@@ -26,7 +26,7 @@ if ( function_exists( 'add_image_size' ) ) {
 } 
 
 
-/*** JS/CSS FILES ***/ 
+/*** JS/CSS FILES ***/  
  
 function initial_scripts_styles() {
 	wp_deregister_script( 'jquery' );
