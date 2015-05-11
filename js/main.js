@@ -116,7 +116,7 @@ function set_page_home(){
 	$.ajax({
 		url:  WP+"/wp-admin/admin-ajax.php",
 		method: 'post',
-		data: {action:"get_page_fields",page:9},
+		data: {action:"get_page_fields"},
 		success: function(result) {
 			getTemplateAjax( theme + '/templates/home.handlebars?v='+v, function(template) {
 				data = jQuery.parseJSON(result);
