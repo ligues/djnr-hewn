@@ -1064,6 +1064,10 @@ footer .column_right .dotted{
 
 	}
 
+	.arrow:hover{
+		background-color: transparent;
+	}
+
 	#navigation_guide.home{
 		width: 100%;
 		text-align: center;
@@ -1177,6 +1181,7 @@ footer .column_right .dotted{
 
 	.services_list .image_letter{
 		margin: 0 auto;
+		width: 100%; 
 	}
 
 	#project_services_container{
