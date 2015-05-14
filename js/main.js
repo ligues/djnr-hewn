@@ -151,9 +151,8 @@ function set_page_home(){
 				
 				$('body').scroll(function() {
 			        var top = $(window).scrollTop();
-			        console.log(top);
 			        if (top < 50) {
-			            $("#navigation_guide").fadeOut();
+			            $("#navigation_guide.home").fadeOut();
 			        }
 			    });
 
@@ -473,8 +472,6 @@ function set_page_projects(){
 						},
 						scroll: {
 							easing: "easeInOutCubic",
-							//easing: "easeOutCubic",
-							//fx              : "linear",
             				duration        : 500
 
 						},
@@ -552,7 +549,7 @@ function set_page_projects(){
 				$('#project_all').click(function(e){
 		  			e.preventDefault();
 		  			
-		  			
+		  			$('#navigation_guide').fadeOut(900);
 		  			$('.project_map').addClass('open');
 		  			$('.project_map_back').fadeIn();
 
@@ -790,11 +787,11 @@ function set_map(){
         overviewMapControl: false,
         mapTypeControl: false,
         panControl: false,
-        /*zoomControl: true,
         zoomControlOptions: {
-            style: google.maps.ZoomControlStyle.SMALL,
-            position: google.maps.ControlPosition.RIGHT_BOTTOM
+            position: google.maps.ControlPosition.LEFT_CENTER
         },
+        /*zoomControl: true,
+        
         disableDoubleClickZoom: true,
         mapTypeControl: true,
         scaleControl: true,
@@ -839,9 +836,9 @@ function set_map(){
 				,zIndex: null
 				,boxStyle: { 
 				  opacity: 1
-				  ,width: "255px"
+				  ,width: "270px"
 				 }
-				,closeBoxMargin: "0px"
+				,closeBoxMargin: "3px 3px 0px 0px"
 				,closeBoxURL: theme + '/img/closemap.png'
 				,infoBoxClearance: new google.maps.Size(1, 1)
 				,isHidden: false
@@ -851,6 +848,7 @@ function set_map(){
 			
 			var ib = new InfoBox(myOptions);
 			google.maps.event.addListener(marker, "mouseover", function (e) {
+				$('.infoBox').hide(0);
 				ib.open(map, this);
 			});
 
@@ -868,10 +866,8 @@ function set_map(){
 				i++;
 			});
 
-			
-
 			google.maps.event.addListener(marker, 'mouseout', function() {
-			   ib.close();
+			   //ib.close();
 			});
 		}
     })
