@@ -58,7 +58,7 @@ function set_buttons(){
 		$("body").css("overflow-y", "visible");
 	})
 
-	$('#btn_home,#btn_home_mobile').click(function(e){
+	$('#btn_home,#btn_home_mobile,.logo_mobile').click(function(e){
 		e.preventDefault();
 		$('.menu_links').unbind('touchmove');
 		$("body").css("overflow-y", "visible");
@@ -565,8 +565,6 @@ function set_page_projects(){
 						     $('.project_map').removeClass('close');
 						     $('.project_map').removeClass('open');
 						 }, 500);
-	  					
-
 	  					
 		  				$('.project_map_back').fadeOut('slow');
 

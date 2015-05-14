@@ -1,4 +1,4 @@
-<div class="header_mobile"><div class="logo_mobile">HEWN</div><div class="menu_mobile">MENU</div></div>
+
 <header class="fixed"  style="position:fixed; top:0;left:0; background-color:#BDBEC0; height:210px">
     <div class="column column_left">
     	<div class="logo black uppercase"><a href="home" id="btn_home">HEWN</a></div>
@@ -33,9 +33,29 @@
 
 </header> 
 
+<div class="header_mobile">
+	<div class="logo_mobile">HEWN</div><div class="menu_mobile"></div>
+</div>
+<div class="title_mobile">
+	Veritable Experience, Encyclopedic <br>
+	Knowledge and Master Craftsmanship
+</div>
+
 <div class="container" >
 
-	<div class="about services_list" style="margin-bottom:10px">
+	<div class="about_slides_container">
+		<div id="about_slides">
+			{{#each slider_pictures}}
+		    <div class="about_slide" style="height:500px;background-size:cover;background-image:url({{this.picture.url}});"></div>
+		    {{/each}}
+		</div>
+		<div class="arrow left" style="z-index:0"></div>
+		<div class="arrow right" style="z-index:0"></div>
+	</div>
+
+
+
+	<div class="about_page services_list" style="margin-bottom:10px">
 		<div class="column column_left">
 	        
 	    </div>
@@ -48,20 +68,13 @@
 	    </div>
 	</div>
 
+
 	<div class="about_shop_content">
 		<div>__</div>
 		{{content}}
 	</div>
 
-	<div style="position:relative">
-		<div id="about_slides">
-			{{#each slider_pictures}}
-		    <div class="about_slide" style="height:500px;background-size:cover;background-image:url({{this.picture.url}});"></div>
-		    {{/each}}
-		</div>
-		<div class="arrow left" style="z-index:0"></div>
-		<div class="arrow right" style="z-index:0"></div>
-	</div>
+	
 
 
 

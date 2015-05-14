@@ -561,6 +561,17 @@ footer .column_right .dotted{
 	display: inline-block;
 }
 
+.about_page.services_list{
+	margin-top: 20px;
+}
+
+.about_slides_container{
+	position:relative;
+	margin-top:210px
+}
+
+
+
 /* PROJECTS */
 
 
@@ -960,9 +971,8 @@ footer .column_right .dotted{
 
 .logo_mobile{
 	height: 30px;
-	line-height: 30px;
 	position: absolute;
-	top:20px;
+	top:18px;
 	left:20px;
 }
 
@@ -1033,6 +1043,7 @@ footer .column_right .dotted{
 		width: 100%;
 		text-align: center;
 		display: block;
+		right: 0px;
 	}
 
 	#navigation_guide.services_page{
@@ -1049,13 +1060,14 @@ footer .column_right .dotted{
 	}
 
 	.title_mobile{
-		display: block;
+		/*display: block;
 		margin: 40px 20px 20px 20px;
 		width: 92%;
-		background: url('../img/dotted.png') repeat-x left top,
-					url('../img/dotted.png') repeat-x left bottom;
-		background-size: 10px auto;
-		padding: 20px 0px;
+		padding: 20px 0px; */
+		  display: block;
+		  margin: -10px 20px 20px 20px;
+		  width: 75%;
+		  padding: 0px 0px;
 	}
 
 	.work,.services,.about,.shop{
@@ -1117,7 +1129,7 @@ footer .column_right .dotted{
 	.header_mobile_projects{
 		display: block;
 		width: 100%;
-		height: auto;
+		height: auto; 
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -1136,5 +1148,13 @@ footer .column_right .dotted{
 		width: 42px;
 		height: 41px;
 		background-image: url('../img/close_map.png');		
+	}
+
+	#project_services_container{
+		left: 20px;
+	}
+
+	.about_slides_container{
+		margin-top:10px
 	}
 }
