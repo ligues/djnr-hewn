@@ -18,6 +18,22 @@
         
     </head>
     <body>
+    
+    <div class="menu_links">
+        <div class="menu_links_close"></div>
+        <ul>
+            <li id="btn_home_mobile">HOME</li>
+            <li id="btn_services_mobile">SERVICES</li>
+            <li id="btn_about_mobile">ABOUT</li>
+            <li id="btn_projects_mobile">PROJECTS</li>
+            <li id="btn_store_mobile">STORE</li>
+        </ul>
+        <div>
+            <p>+1 512_386_6404</p>
+            <p><a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a></p>
+            <p>730 Shady Lane Austin TX 78702</p>
+        </div>
+    </div>
 
     <div class="page" style="width:100%">
 

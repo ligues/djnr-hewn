@@ -42,6 +42,7 @@ function initial_scripts_styles() {
     wp_enqueue_script( 'easing', get_template_directory_uri() . '/js/caroufredsel/jquery.easing.1.3.js',  array(), null, true );
     wp_enqueue_script( 'caroufredsel', get_template_directory_uri() . '/js/caroufredsel/jquery.carouFredSel-6.2.1.js',  array(), null, true );
     wp_enqueue_script( 'touchSwipe', get_template_directory_uri() . '/js/caroufredsel/helper-plugins/jquery.touchSwipe.min.js',  array(), null, true );
+    wp_enqueue_script( 'fastclick', get_template_directory_uri() . '/js/fastclick.js',  array(), null, true );
     
     wp_enqueue_script( 'handlebars', get_template_directory_uri() . '/js/handlebars-v3.0.0.js',  array(), null, true );
     wp_enqueue_script( 'jssor', get_template_directory_uri() . '/js/jssor.js',  array(), null, true );
