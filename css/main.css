@@ -304,7 +304,7 @@ footer .column_right .dotted{
 	/*background-image: url(../img/h.jpg); */
 	background-repeat: no-repeat;
 	background-color: #BDBEC0;
-	background-position: top center;
+	background-position: center center;
 	background-size: cover;
 }
 
@@ -1105,6 +1105,10 @@ footer .column_right .dotted{
 
 	.arrow:hover{
 		background-color: transparent;
+	}
+
+	.main_image{
+		background-size: 190% auto;
 	}
 
 	#navigation_guide.home{
