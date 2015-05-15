@@ -1230,4 +1230,14 @@ footer .column_right .dotted{
 	.about_slides_container{
 		margin-top:10px
 	}
+
+	#navigation_guide.services_page .arrows .top{
+		display: block;
+	}
+
+	#navigation_guide.services_page .arrows{
+		width: auto;
+	}
+
+	
 }

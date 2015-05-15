@@ -156,7 +156,7 @@ function set_page_home(){
 				$('body').scroll(function() {
 			        var top = $(window).scrollTop();
 			        if (top < 50) {
-			            $("#navigation_guide.home").fadeOut();
+			            $("#navigation_guide").hide();
 			        }
 			    });
 
