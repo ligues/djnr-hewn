@@ -501,9 +501,24 @@ function set_page_projects(){
         				wipe        : true,
         				mousewheel  : true
 
-					},
-					swipe: true
+					}/*,
+					swipe       : {
+		                onTouch     : true,
+		                onMouse     : true
+		            }*/
 	        	});
+
+	        	$("#updown").swipe({
+		            
+		            swipeDown: function() {
+		                $('#updown').trigger('prev', true);
+		                $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[0].id).data().title)
+		            },
+		            swipeUp: function() {
+		                $('#updown').trigger('next', true);
+		                $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[1].id).data().title)
+		            }
+		        });
 				
 
 				if((w/h)<1.33){
