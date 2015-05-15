@@ -395,6 +395,48 @@ function set_page_projects(){
 
 		  		//$(window).bind("resize", resize_projects_bg);
 
+
+		  		$('body').bind('mousewheel',MouseWheelHandler);
+		  		$('body').bind('DOMMouseScroll',MouseWheelHandler);
+		  		var i=0;
+				function MouseWheelHandler(e) {
+
+					var e = window.event || e;
+					var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+
+					e.preventDefault();
+				    clearTimeout($.data(this, 'timer'));       
+
+				   
+				    if( delta > 0 ) {               
+				        i = i+1;       
+				        
+				        if( i == 2 ) {                  
+				            $('#updown').trigger("prev", 1); 
+					        $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[0].id).data().title)
+					        $('#navigation_guide').fadeOut(900);
+				        }           
+
+				    } else { 
+
+				        i--;   
+
+				        if(i==-2) {     
+				            $('#updown').trigger("next", 1); 
+					        $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[1].id).data().title)
+					        $('#navigation_guide').fadeOut(900);
+				        }               
+
+				    } 
+
+				    $.data(this, 'timer', setTimeout(function() {
+				        i = 0;
+				    }, 50));
+
+
+				}
+   
+
 		  		h = window.innerHeight;
 				w = window.innerWidth;
 
