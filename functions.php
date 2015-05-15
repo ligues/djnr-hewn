@@ -12,7 +12,7 @@ function woocommerce_support() {
 /*** HIDE ADMIN BAR ***/
 show_admin_bar( false );
 
-/*** ADD FEATURED IMAGE ***/
+/*** ADD FEATURED IMAGE ***/ 
 //add_theme_support( 'post-thumbnails' );
 
 /*** IMAGES SIZES ***/

@@ -643,7 +643,7 @@ footer .column_right .dotted{
 
 .dotted_project_right_out{
 	width: 3px;
-	margin:0px 11px;
+	margin:0px 11px; 
 	background: url('../img/dotted_v.png') repeat-y;
 	background-position: center top;
 	background-size: auto 10px;

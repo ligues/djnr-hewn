@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <base href="<?php echo get_site_url(); ?>/" >
-        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta charset="<?php bloginfo( 'charset' ); ?>" /> 
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>HEWN</title>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
