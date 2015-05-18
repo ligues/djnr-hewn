@@ -397,6 +397,9 @@ function set_page_projects(){
 
 		  		//$(window).bind("resize", resize_projects_bg);
 
+		  		$('#updown').bind('touchmove', function (e) {
+		          e.preventDefault()
+		        });
 
 		  		$('body').bind('mousewheel',MouseWheelHandler);
 		  		$('body').bind('DOMMouseScroll',MouseWheelHandler);

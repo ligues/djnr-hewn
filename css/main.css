@@ -1243,5 +1243,13 @@ footer .column_right .dotted{
 		width: auto;
 	}
 
+	.gradient{
+		height: 80px
+	}
+
+	.gradient_bottom{
+		display: none;
+	}
+
 	
 }
