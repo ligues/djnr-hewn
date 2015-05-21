@@ -107,6 +107,26 @@ function create_post_type_projects() {
 	);
 }
 
+add_action( 'init', 'create_post_type_markers' );
+function create_post_type_markers() {
+	register_post_type( 'markers',
+		array(
+			'labels' => array(
+				'name' => __( 'Project Marker' ),
+				'add_new_item' => __( 'Add New Project Marker' ),
+				'new_item' => __( 'New Project Marker' ),
+				'edit_item' => __( 'Edit Project Marker' ),
+				'view_item' => __( 'View Projects Marker' ),
+				'singular_name' => __( 'marker' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'marker_list'),
+			'supports' => array( 'revisions','title')
+		)
+	);
+}
+
 //Handler POST
 add_action('wp_ajax_nopriv_get_page_fields', 'get_page_fields');
 add_action('wp_ajax_get_page_fields', 'get_page_fields');
@@ -121,13 +141,15 @@ function get_page_fields(){
 	$services = get_field('home_services',$page);
 	$about = get_field('home_about',$page);
 	$shop = get_field('home_shop',$page);
+	$slider = get_field('home_slider',$page);
 
 	$fields = array(
 		'front'=>$front,
 		'work'=>$work,
 		'services'=>$services,
 		'about'=>$about,
-		'shop'=>$shop
+		'shop'=>$shop,
+		'slider'=>$slider
 		);
 
 	echo json_encode($fields);
@@ -219,10 +241,26 @@ function get_projects(){
 		$items[$i]['pictures'] = get_field('pictures',$id);
 		$items[$i]['services'] = get_field('services',$id);
 		$items[$i]['location'] = get_field('location',$id);
-		
 	}   
-	
-	echo json_encode(array('projects'=>$items,'title'=>$items[0]['content']));
+
+	$args = array(
+		'post_type'		=> 'markers',
+		'posts_per_page'=> -1,
+		'orderby'           => 'menu_order',
+		'order'           => 'ASC',
+		);
+
+	$data = get_posts($args);
+	$items2 = NULL;
+	for($i=0;$i<count($data);$i++){
+		$id = $data[$i]->ID;
+		$items2[$i]['id'] = $id;
+		$items2[$i]['title'] = $data[$i]->post_title;
+		$items2[$i]['marker_location'] = get_field('marker_location',$id);
+		$items2[$i]['marker_description'] = get_field('marker_description',$id);
+	}   
+
+	echo json_encode(array('projects'=>$items,'title'=>$items[0]['content'],'markers'=>$items2));
 	die();
 
 	
