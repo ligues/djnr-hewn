@@ -15,6 +15,7 @@ a{
 a:hover{
 	background-color: #A0B350;
 	color: #333333;
+	text-decoration: none;
 }
 
 header{ 
@@ -52,7 +53,7 @@ header.fixed_project{
 .loader{
 	width: 100%;
 	height: 100%;
-	background-color: #BDBEC0;
+	background-color: #A0B350;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -169,6 +170,10 @@ header .address{
 	line-height: normal;
 }
 
+nav a{
+	margin: 0px 5px 0px 0px
+}
+
 .address span{
 	display: block;
 }
@@ -181,7 +186,7 @@ header .map{
 }
 
 header .map a{
-	padding-left: 25px;
+	margin-left: 25px;
 }
 
 .column_left .dotted{
@@ -233,6 +238,7 @@ header .map a{
 .active_link{
 	background-color: #A0B350;
 	color: #333333;
+	text-decoration: none;
 }
 
 
@@ -344,6 +350,7 @@ footer .column_right .dotted{
 
 .front_links{
 	background-size: cover;
+	background-position: center center;
 }
 
 .front_link{
@@ -599,7 +606,7 @@ footer .column_right .dotted{
 	white-space: nowrap;
 	font-size: 18px;
 	vertical-align: top;
-	line-height: 66px;
+	line-height: 2.8;
 }
 
 .dotted_project_left a,.dotted_project_right a{
@@ -638,19 +645,21 @@ footer .column_right .dotted{
 	position: absolute;
 	left: 780px;
 	top: 30px;
-	width: 48px;
-	height: 40px;
+	width: 24px;
+	height: 20px;
 	cursor: pointer;
 }
 
 .close_nav{
 	background: url('../img/close_nav2.png') repeat-y;
-	background-size: 48px 40px;
+	background-size: 24px 20px;
+	background-repeat: no-repeat;
 }
 
 .open_nav{
-	background: url('../img/close_nav2.png') repeat-y;
-	background-size: 48px 40px;
+	background: url('../img/open_nav2.png') repeat-y;
+	background-size: 24px 20px;
+	background-repeat: no-repeat;
 }
 
 #project_all, #project_services{
@@ -723,9 +732,10 @@ footer .column_right .dotted{
 	position: absolute;
 	right: 20px;
 	top: 20px;
-	width: 42px;
-	height: 41px;
-	background-image: url('../img/close_map.png');
+	width: 24px;
+	height: 20px;
+	background-image: url('../img/close_nav2.png');
+	background-size: 24px 20px;
 }
 
 .project_map_back:hover{
@@ -733,17 +743,17 @@ footer .column_right .dotted{
 }
 
 .arrow{
-	width: 46px;
-	height: 46px;
+	width: 24px;
+	height: 24px;
 	position: absolute;
 	background-image: url('../img/arrow3.png');
 	z-index: 601;
-	background-size: 46px 46px;
+	background-size: 24px 24px;
 	cursor: pointer;
 }
 
 .arrow:hover, #close_nav:hover{
-	background-color: #A0B350; 
+	opacity: .5
 }
 
 .arrow.left{
@@ -927,6 +937,24 @@ footer .column_right .dotted{
 	font-size: .8em;
 }
 
+.map_icon{
+	background-image: url('../img/mapicon.png');
+	background-repeat: no-repeat;
+	background-size: 24px 20px;
+	width: 24px;
+	height: 20px;
+	float: left;
+	margin:13px 10px 0px 0px;
+}
+
+#project_services_close{
+	display: none;
+	position: absolute;
+	z-index: 10000;
+	left: 286px;
+	top: 115px;
+}
+
 
 /* STORE */
 
@@ -1063,9 +1091,9 @@ footer .column_right .dotted{
 	background-image: url('../img/menu_icon.png');
 	background-repeat: no-repeat;
 	background-position: left center; 
-	width: 62px;
-	height: 40px;
-	background-size: auto 40px;
+	width: 38px;
+	height: 26px;
+	background-size: auto 26px;
 	position: absolute;
 	top:20px;
 	right:20px;
@@ -1076,9 +1104,10 @@ footer .column_right .dotted{
 	position: absolute;
 	right: 20px;
 	top: 20px;
-	width: 42px;
-	height: 41px;
-	background-image: url('../img/close_map.png');
+	width: 39px;
+	height: 32px;
+	background-image: url('../img/close_nav2.png');
+	background-size: 39px 32px;
 }
 
 .menu_links ul{
@@ -1270,5 +1299,17 @@ footer .column_right .dotted{
 		display: none;
 	}
 
+
+	.arrow.right{
+		right: 15px
+	}
+
+	.arrow.left{
+		left: 15px
+	}
+
+	.arrow.down{
+		bottom: 15px
+	}
 	
 }

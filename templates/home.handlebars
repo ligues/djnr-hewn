@@ -1,5 +1,5 @@
 <div style="position:relative">
-	<header style="position:absolute">
+	<header style="position:absolute;z-index:50000">
 	    <div class="column column_left">
 	    	<div class="logo black uppercase"><a href="home" id="btn_home">HEWN</a></div>
 			<div class="dotted">
@@ -40,7 +40,9 @@
 		</div>
 	</div>
 
+
 	<div class="home_slides_container">
+		<div class="gradient"></div>
 		<div id="home_slides">
 			{{#each front}}
 		    <div class="home_slide" style="background-image:url({{this.home_front_image.url}});"></div>
@@ -128,7 +130,7 @@
 	<footer>
 	    <div class="footer_container">
 	    	<div class="column column_left">
-	       		<div class="logo black uppercase"><a href="#"><span class="medium">&copy; 2015</span> HEWN</a></div>
+	       		<div class="logo black uppercase"><a href="#"><span class="medium">&copy;2015</span> HEWN</a></div>
 		        <div class="dotted">
 		            <div class="content_dotted">
 						730_Shady Lane<br/>
