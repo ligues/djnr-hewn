@@ -66,6 +66,11 @@
 		
 	</div>
 	<div class="front_links services" style="background-image:url({{services.url}})">
+		<div id="services_slider">
+				{{#each slider}}
+				<div class="services_slide" style="background-image:url({{this.home_slider_image.url}});"></div>
+				{{/each}}
+			</div>
 		<div class="front_link">
 			<a href="services" id="link_services" class="bold uppercase">
 				Read<br>

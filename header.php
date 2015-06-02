@@ -9,7 +9,7 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
         <meta name="description" content="<?php bloginfo('description'); ?>" />
         <meta property="og:url" content="<?php the_permalink(); ?>" /> 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
         <script type="text/javascript">var WP = '<?php echo get_site_url(); ?>';var theme = '<?php echo get_stylesheet_directory_uri() ?>';</script>
         <?php  wp_head();  ?> 
         <script type="text/javascript"

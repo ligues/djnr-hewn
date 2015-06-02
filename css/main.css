@@ -10,12 +10,14 @@ html,body{
 
 a{
 	color: #ffffff;
+	padding:  3px 5px 0px 5px;
 }
 
 a:hover{
 	background-color: #A0B350;
 	color: #333333;
 	text-decoration: none;
+	padding:  3px 5px 0px 5px;
 }
 
 header{ 
@@ -31,7 +33,7 @@ header{
 } 
 
 header.fixed{
-	float: auto
+	float: auto;
 	top: 0;
 	background-color: #BDBEC0;
 	width: 100%;
@@ -53,7 +55,7 @@ header.fixed_project{
 .loader{
 	width: 100%;
 	height: 100%;
-	background-color: #A0B350;
+	background-color: #5D5D5D;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -68,7 +70,7 @@ header.fixed_project{
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	background-image: url('../img/loader.png');
+	background-image: url('../img/loader2.png');
 	width: 60px;
 	height: 83px;
 	-webkit-animation: fade 3s infinite linear;
@@ -131,7 +133,7 @@ header.fixed_project{
 }
 
 header .column_center{
-	height: 140px;	
+	height: 130px;	
 	margin-top: 30px;
 }
 
@@ -161,6 +163,7 @@ header .column_center{
 header nav a{
 	color: #ffffff;
 	font-weight: 100;
+	padding:  3px 5px 0px 5px;
 }
 
 header .address{
@@ -171,7 +174,7 @@ header .address{
 }
 
 nav a{
-	margin: 0px 5px 0px 0px
+	/*margin: 0px 5px 0px 0px*/
 }
 
 .address span{
@@ -239,8 +242,8 @@ header .map a{
 	background-color: #A0B350;
 	color: #333333;
 	text-decoration: none;
+	padding: 3px 5px 0px 5px;
 }
-
 
 footer{
 	width: 100%;
@@ -261,7 +264,7 @@ footer .footer_container{
 }
 
 footer .column_center{
-	height: 80px;	
+	height: 62px;	
 	margin-top: 30px;
 }
 
@@ -309,23 +312,23 @@ footer .column_right .dotted{
 }
 
 @-webkit-keyframes h {
-   from { background-position:    0px 0px; }
-     to { background-position: 0px -8568px; }
+   from { background-position:    0px }
+     to { background-position: -7040px }
 }
 
 @-moz-keyframes h {
- from { background-position:    0px 0px; }
-     to { background-position: 0px -8568px; }
+ from { background-position:    0px }
+     to { background-position: -7040px }
 }
 
 @-ms-keyframes h {
-   from { background-position:    0px 0px; }
-     to { background-position: 0px -8568px; }
+   from { background-position:    0px }
+     to { background-position: -7040px }
 }
 
 @keyframes h {
-   from { background-position:    0px 0px; }
-     to { background-position: 0px -8568px; }
+   from { background-position:    0px }
+     to { background-position: -7040px }
 }
 
 
@@ -448,6 +451,21 @@ footer .column_right .dotted{
 .bg14{background-image: url('../img/slider/14.jpg');}
 
 
+#services_slider{
+	opacity: 1;
+}
+
+.services_slide{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-size: cover;
+	background-position: center center;
+	display: none;
+}
+
 
 /*  services_list  */
 
@@ -497,12 +515,17 @@ footer .column_right .dotted{
 	margin-bottom: 40px;
 }
 
+.letter_links{
+	line-height: 2.4;
+	width: 600px
+}
+
 .letter_links a{
-	margin-right: 2px;
+	margin-right: -3px;
 }
 
 .service_text{
-	text-align: justify;
+	/*text-align: justify; */
 }
 
 .service_text span:nth-child(1){
@@ -560,6 +583,14 @@ footer .column_right .dotted{
 .about_slides_container{
 	position:relative;
 	margin-top:210px
+}
+
+.about_links{
+	line-height: 2.4;
+}
+
+.about_links a{
+	margin-right: 5px;
 }
 
 
@@ -620,7 +651,7 @@ footer .column_right .dotted{
 	background: url('../img/dotted_v.png') repeat-y;
 	background-position: center top;
 	background-size: auto 10px;
-	height: 73px;
+	height: 63px;
 	display: inline-block;
 	white-space: nowrap;
 	position: relative;
@@ -637,7 +668,7 @@ footer .column_right .dotted{
 	left: 755px;
 	top: 30px;
 	width: 3px;
-	height: 140px;
+	height: 130px;
 	font-size: 0;
 }
 
@@ -692,7 +723,7 @@ footer .column_right .dotted{
 }
 
 #project_services_container ul{
-	margin: 0;
+	margin: 11px 0px 0px 0px;
 	padding: 0;
 	list-style: none;
 	display: none;
@@ -719,6 +750,7 @@ footer .column_right .dotted{
 .project_services_list{
 	position: relative;
 	z-index: 1001;
+	margin: 0;
 }
 
 #map{
@@ -736,10 +768,12 @@ footer .column_right .dotted{
 	height: 20px;
 	background-image: url('../img/close_nav2.png');
 	background-size: 24px 20px;
+	padding: 0px;
 }
 
 .project_map_back:hover{
 	background-color: transparent;
+	padding: 0px;
 }
 
 .arrow{
@@ -781,6 +815,8 @@ footer .column_right .dotted{
 	right: 0;
 	margin: auto;
 
+	display: none;
+
 	-webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
@@ -789,13 +825,17 @@ footer .column_right .dotted{
 }
 
 #navigation_guide{
-	position: fixed;
+	position: absolute;
 	bottom: 10px;
-	right: 10px;
+	right: 0;
+	left: 0;
 	z-index: 2000;
-	width: 300px;
 	line-height: 1;
 	font-size: 0;
+	margin: auto;
+	width: 90%;
+	text-align: center;
+
 }
 
 #navigation_guide.home{
@@ -806,7 +846,11 @@ footer .column_right .dotted{
 
 #navigation_guide div{
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: text-bottom;
+}
+
+#navigation_guide > div.text > p{
+	margin: 0;
 }
 
 #navigation_guide .dotted_v{
@@ -814,7 +858,8 @@ footer .column_right .dotted{
 	background: url('../img/dotted_v.png') repeat-y;
 	background-position: center top;
 	background-size: auto 10px;
-	height: 100px;
+	height: 60px;
+	margin: 0px 10px;
 }
 
 #navigation_guide .arrows{
@@ -837,7 +882,7 @@ footer .column_right .dotted{
     -ms-transform: rotate(270deg);
     -o-transform: rotate(270deg);
     transform: rotate(270deg);
-    margin-left: 34px;
+    margin-left: 28px;
     margin-right: 28px;
 }
 
@@ -858,7 +903,6 @@ footer .column_right .dotted{
 }
 
 #navigation_guide .text{
-	width: 192px;
 	font-size: 18px;
 	padding-left: 5px;
 }
@@ -900,6 +944,8 @@ footer .column_right .dotted{
 
 .infoBox{
 	background-image: url(../img/projectmapback.png);
+	background-position: right top;
+	background-repeat: no-repeat;
 	width: 225px;
 	height: 139px;
 	overflow: hidden;
@@ -909,15 +955,14 @@ footer .column_right .dotted{
 	font-family: 'Colfax_medium';
 	font-size: 18px;
 	margin:0;
-	padding: 5px;
+	padding: 10px 0px 0px 10px
 }
 
 .infoBox a{
 	font-family: 'Colfax_medium';
-	font-size: 16px;
-	margin:0;
-	margin-left: 5px;
-	padding: 2px;
+	font-size: 12px;
+	padding: 0px 0px 0px 0px;
+	margin-left: 10px; 
 	text-decoration: underline;
 	width: auto;
 }
@@ -929,12 +974,15 @@ footer .column_right .dotted{
 
 .marker_title{
 	text-decoration: none;
-	font-size: 1.1em;
+	font-size: 18px !important;
+	margin:0;
+	padding: 10px 0px 0px 15px !important;
 }
 
 .marker_description{
 	text-decoration: none;
-	font-size: .8em;
+	font-size: 12px !important;
+	padding: 5px 0px 0px 15px !important;
 }
 
 .map_icon{
@@ -1140,6 +1188,14 @@ footer .column_right .dotted{
 		height: auto;
 	}
 
+	.footer_mobile .column_right{
+		margin-left: 0px;
+	}
+
+	.footer_mobile .dotted{
+		margin-left: 20px;
+	}
+
 	.header_mobile{
 		display: block;
 	}
@@ -1185,18 +1241,22 @@ footer .column_right .dotted{
 		width: 92%;
 		padding: 20px 0px; */
 		  display: block;
-		  margin: -10px 20px 20px 20px;
+		  margin: -5px 20px 20px 20px;
 		  width: 75%;
 		  padding: 0px 0px;
 	}
 
 	.work,.services,.about,.shop{
-		height: 25%;
+		height: 300px;
 		width: 100%;
 		display: block;
 		position: relative;
 	}
- 
+ 	
+	#services_slider{
+		opacity: 0;
+	}
+
 	.letters_mobile{
 		display: block;
 		position: relative;
@@ -1217,13 +1277,17 @@ footer .column_right .dotted{
 		font-size: 30px;
 	}
 
+	.services_list .column_right{
+		margin-left: 20px;
+	}
+
 	.column_left,.column_center{
 		display: none;
 	}
 
 	.service_text{
-		margin-left: 15px;
-		width: 92%;
+		margin-left: 0px;
+		width: 100%;
 	}
 
 	.services_list{
