@@ -10,14 +10,15 @@ html,body{
 
 a{
 	color: #ffffff;
-	padding:  3px 5px 0px 5px;
+	padding:  2px 2px 0px 2px;
+	margin-left: -2px;
 }
-
+ 
 a:hover{
 	background-color: #A0B350;
 	color: #333333;
 	text-decoration: none;
-	padding:  3px 5px 0px 5px;
+	padding:  2px 2px 0px 2px;
 }
 
 header{ 
@@ -87,7 +88,7 @@ header.fixed_project{
         opacity:1;
     }
     75% {
-        opacity:0; 
+        opacity:.30; 
     }
     100% {
         opacity:1;
@@ -101,7 +102,37 @@ header.fixed_project{
         opacity:1;
     }
     75% {
-        opacity:0;
+        opacity:.30; 
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-ms-keyframes fade {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:1;
+    }
+    75% {
+        opacity:.30; 
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:1;
+    }
+    75% {
+        opacity:.30; 
     }
     100% {
         opacity:1;
@@ -163,7 +194,7 @@ header .column_center{
 header nav a{
 	color: #ffffff;
 	font-weight: 100;
-	padding:  3px 5px 0px 5px;
+	padding:  2px 2px 0px 2px;
 }
 
 header .address{
@@ -242,14 +273,15 @@ header .map a{
 	background-color: #A0B350;
 	color: #333333;
 	text-decoration: none;
-	padding: 3px 5px 0px 5px;
+	padding: 2px 2px 0px 2px;
 }
 
 footer{
 	width: 100%;
-	height: 150px;
+	height: 110px;
 	background-color: #3A3A3C;
 	margin-top: -1px;
+	padding-top: 10px;
 }
 
 footer .footer_container{
@@ -369,6 +401,10 @@ footer .column_right .dotted{
 	background-size: 10px auto;
 	padding-top: 10px;
 	font-size: 18px;
+}
+
+.front_link a{
+
 }
 
 .front_link_grey{
@@ -507,7 +543,7 @@ footer .column_right .dotted{
 }
 
 .service_text{
-	margin-left: 285px;
+	margin-left: 265px;
 	width: 500px;
 }
 
@@ -549,7 +585,7 @@ footer .column_right .dotted{
 .about_shop_content p{
 	display: block;
 	margin: 0px 0px 10px 0px;  
-	width: 490px;
+	width: 450px;
 }
 
 .about_shop_content, .about_team{
@@ -603,7 +639,7 @@ footer .column_right .dotted{
 	background-size: 10px auto;
 	height: 66px;
 	/*line-height: 66px;*/
-	padding-top: 15px;
+	padding-top: 11px;
 	margin: 40px 15px 0px 0px;
 	width: 465px;
 }
@@ -612,8 +648,8 @@ footer .column_right .dotted{
 	background: url('../img/dotted.png') repeat-x left top,
 				url('../img/dotted.png') repeat-x left bottom;
 	background-size: 10px auto;
-	height: 51px;
-	padding-top: 15px;
+	height: 55px;
+	padding-top: 11px;
 	margin: 40px 15px 0px 0px;
 	width: 465px;
 }
@@ -778,11 +814,10 @@ footer .column_right .dotted{
 
 .arrow{
 	width: 24px;
-	height: 24px;
+	height: 20px;
 	position: absolute;
-	background-image: url('../img/arrow3.png');
 	z-index: 601;
-	background-size: 24px 24px;
+	background-size: 24px 20px;
 	cursor: pointer;
 }
 
@@ -795,11 +830,7 @@ footer .column_right .dotted{
 	bottom: 0;
 	left: 10px;
 	margin: auto;
-	-webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
+	background-image: url('../img/left.png');
 }
 
 .arrow.right{
@@ -807,6 +838,7 @@ footer .column_right .dotted{
 	bottom: 0;
 	right: 10px;
 	margin: auto;
+	background-image: url('../img/right.png');
 }
 
 .arrow.down{
@@ -814,14 +846,9 @@ footer .column_right .dotted{
 	bottom: 10px;
 	right: 0;
 	margin: auto;
-
 	display: none;
+	background-image: url('../img/down.png');
 
-	-webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
 }
 
 #navigation_guide{
@@ -955,7 +982,9 @@ footer .column_right .dotted{
 	font-family: 'Colfax_medium';
 	font-size: 18px;
 	margin:0;
-	padding: 10px 0px 0px 10px
+	padding: 10px 0px 0px 10px;
+	position: relative;
+	z-index: 202;
 }
 
 .infoBox a{
@@ -965,6 +994,8 @@ footer .column_right .dotted{
 	margin-left: 10px; 
 	text-decoration: underline;
 	width: auto;
+	position: relative;
+	z-index: 202;
 }
 
 .infoBox a:hover{
@@ -1001,6 +1032,10 @@ footer .column_right .dotted{
 	z-index: 10000;
 	left: 286px;
 	top: 115px;
+}
+
+ul.project_services_list li:last-child{
+	display: none !important;
 }
 
 
@@ -1179,6 +1214,19 @@ footer .column_right .dotted{
 		display: none;
 	}
 
+	a{
+		margin-left: 0px
+	}
+
+	a:hover{
+		background-color: transparent;
+		color: #ffffff;
+	}
+
+	.menu_links p{
+		margin-left: 20px;
+	}
+
 	.footer_mobile{
 		display: block;
 		height: auto;
@@ -1229,10 +1277,13 @@ footer .column_right .dotted{
 	}
 
 	#navigation_guide.services_page .arrows .top{
-		-webkit-transform: rotate(270deg);
-	    -moz-transform: rotate(270deg);
-	    -ms-transform: rotate(270deg);
-	    transform: rotate(270deg);
+		background-image: url('../img/up.png');
+		width: 24px;
+		height: 20px;
+		background-size: 24px 20px;
+		position: fixed;
+		right: 20px;
+		bottom: 10px;
 	}
 
 	.title_mobile{
@@ -1254,7 +1305,7 @@ footer .column_right .dotted{
 	}
  	
 	#services_slider{
-		opacity: 0;
+		opacity: 1;
 	}
 
 	.letters_mobile{
@@ -1299,11 +1350,11 @@ footer .column_right .dotted{
 	}
 
 	.about_shop_content p{
-		width: 92%;
+		width: 100%;
 	}
 
 	.about_shop_content, .about_team{
-		margin-left: 15px;
+		margin-left: 20px;
 	}
 
 	#navigation_guide{
@@ -1318,6 +1369,14 @@ footer .column_right .dotted{
 		top: 0;
 		left: 0;
 		z-index: 500;
+	}
+
+	#project_services_mobile{
+		padding-left: 0px;
+	}
+
+	#project_services_container{
+		top: 30px;
 	}
 
 	#project_services_close{
@@ -1356,7 +1415,8 @@ footer .column_right .dotted{
 	}
 
 	.gradient{
-		height: 80px
+		height: 100px;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, .8),  rgba(0, 0, 0, 0));
 	}
 
 	.gradient_bottom{
@@ -1365,15 +1425,15 @@ footer .column_right .dotted{
 
 
 	.arrow.right{
-		right: 15px
+		right: 20px
 	}
 
 	.arrow.left{
-		left: 15px
+		left: 20px
 	}
 
 	.arrow.down{
-		bottom: 15px
+		bottom: 20px
 	}
 	
 }

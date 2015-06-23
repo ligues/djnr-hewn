@@ -4,7 +4,7 @@
         <base href="<?php echo get_site_url(); ?>/" >
         <meta charset="<?php bloginfo( 'charset' ); ?>" /> 
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>HEWN</title>
+        <title>JOINERY MASTERCRAFT FABRICATION</title>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
         <meta name="description" content="<?php bloginfo('description'); ?>" />
@@ -18,7 +18,7 @@
         
     </head>
     <body>
-    
+     
     <div class="menu_links">
         <div class="menu_links_close"></div>
         <ul>
@@ -29,9 +29,9 @@
             <li id="btn_store_mobile">STORE</li>
         </ul>
         <div>
-            <p>+1 512_386_6404</p>
+            <a style="text-decoration:none" href="tel:1-512-386-6404"><p>+1 512_386_6404</p></a>
             <p><a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a></p>
-            <p>730 Shady Lane Austin TX 78702</p>
+            <a href="https://www.google.com/maps/place/HEWN/@30.254549,-97.697018,17z/data=!3m1!4b1!4m2!3m1!1s0x8644b6801475f07f:0x395cc41e1b5fec13"><p>730 Shady Lane Austin TX 78702</p> </a>
         </div>
     </div>
 
