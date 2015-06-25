@@ -20,8 +20,9 @@
 	        
 	        <div class="dotted">
 	        	<div class="content_dotted">
-					Mastercraft + <br/>
-					Joinery + Fabrication
+					{{#each content}}
+					{{this}}
+					{{/each}}
 				</div>
 				<div class="map"><a target="_blank" href="https://www.google.com/maps/place/HEWN/@30.254549,-97.697018,17z/data=!3m1!4b1!4m2!3m1!1s0x8644b6801475f07f:0x395cc41e1b5fec13">730 Shady Lane Austin TX 78702</a></div>
 	        </div>
@@ -98,6 +99,7 @@
 				Our<br>
 				Products
 			</a>
+			<a id="store_legend" style="display:none"></a>
 		</div>
 		<div class="green"></div>
 		

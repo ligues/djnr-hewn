@@ -191,6 +191,10 @@ header .column_center{
      line-height: normal;
 }
 
+.content_dotted p{
+	margin: 0;
+}
+
 header nav a{
 	color: #ffffff;
 	font-weight: 100;

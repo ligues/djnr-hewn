@@ -136,6 +136,8 @@ function get_page_fields(){
 	//$frontpage_id = get_option('page_on_front');
 	$page = get_option('page_on_front');//$_POST["page"];
 	
+	$page_content = get_page($page);
+	$content = $page_content->post_content;
 	$front = get_field('home_front',$page);
 	$work = get_field('home_work',$page);
 	$services = get_field('home_services',$page);
@@ -149,7 +151,8 @@ function get_page_fields(){
 		'services'=>$services,
 		'about'=>$about,
 		'shop'=>$shop,
-		'slider'=>$slider
+		'slider'=>$slider,
+		'content'=>array(wpautop($content)),
 		);
 
 	echo json_encode($fields);
@@ -366,4 +369,27 @@ function get_products($category){
 
 }
 
+function get_store_status(){
+	$id = get_id_by_slug('home');
+	$status = get_field('home_enable_store',$id);
+	return $status;
+}
+
+function get_store_status_legend(){
+	$id = get_id_by_slug('home');
+	$legend = get_field('home_disable_store_legend',$id);
+	return $legend;
+}
+
+// Usage:
+// get_id_by_slug('any-page-slug');
+ 
+function get_id_by_slug($page_slug) {
+	$page = get_page_by_path($page_slug);
+	if ($page) {
+		return $page->ID;
+	} else {
+		return null;
+	}
+}
 

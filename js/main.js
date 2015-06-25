@@ -74,6 +74,13 @@ function set_buttons(){
 	    }
 	})
 
+	if(store!='1'){
+		$('#btn_store,#btn_store_mobile').hide();
+		$('#link_shop').hide();
+		$('#store_legend').html(store_l);
+		$('#store_legend').show();
+	}
+
 	$('#navigation_guide.services_page .arrows .top').click(function(){
 		$("html, body").animate({ scrollTop: 0 }, "slow");
   		return false;
@@ -99,6 +106,7 @@ function set_buttons(){
 	})
 
 	$('#btn_home,#btn_home_mobile,.logo_mobile').click(function(e){
+		window.scrollTo(0, 0);
 		e.preventDefault();
 		$('.menu_links').unbind('touchmove');
 		$("body").css("overflow-y", "visible");
@@ -108,6 +116,7 @@ function set_buttons(){
 	})
 
 	$('#btn_services,#btn_services_mobile').click(function(e){
+		window.scrollTo(0, 0);
 		e.preventDefault();
 		$('.menu_links').unbind('touchmove');
 		$("body").css("overflow-y", "visible");
@@ -118,6 +127,7 @@ function set_buttons(){
 	})
 
 	$('#btn_about,#btn_about_mobile').click(function(e){
+		window.scrollTo(0, 0);
 		History.pushState(null, "about",WP+"/about"); 
 		e.preventDefault();
 		$('.menu_links').unbind('touchmove');
@@ -492,7 +502,7 @@ function set_page_about(){
 		      	$("#shop_link").click(function(e) {
 					e.preventDefault();
 
-				    $('body').animate({		
+				    $('html,body').animate({		
 				        scrollTop: $('.about_shop_content').offset().top -50
 				    }, 1000);
 				});
@@ -500,7 +510,7 @@ function set_page_about(){
 				$("#team_link").click(function(e) {
 					e.preventDefault();
 					
-				    $('body').animate({
+				    $('html,body').animate({
 				        scrollTop: $('.about_team').offset().top - 50
 				    }, 1000);
 				});
@@ -559,6 +569,19 @@ function set_page_services(){
 					else{
 						$('.services_list .column_right').width(w-330);	
 					}
+
+
+					scroll_positions = [];
+
+					jQuery.each($('.services_list .letter'), function() {
+						var obj = new Object();
+						if(this.attributes["data-letter"]){
+							obj["letter"] = this.attributes["data-letter"].nodeValue;
+							obj["position"] = $(eval('scroll_'+this.attributes["data-letter"].nodeValue)).offset().top
+							scroll_positions.push(obj)
+						}
+					});
+
 				});
 
 				jQuery.each($('.letter_point'), function() {
@@ -594,12 +617,12 @@ function set_page_services(){
 					})
 
 					if($('body').scrollTop() > scroll){
-						$('body').animate({
+						$('html,body').animate({
 					        scrollTop: scroll - 181
 					    }, 1000);
 					}
 					else{
-						$('body').animate({
+						$('html,body').animate({
 					        scrollTop: scroll - 170
 					    }, 1000);	
 					}
@@ -816,9 +839,9 @@ function set_page_projects(){
 			  					
 			  					if(hc+180>h){
 			  						if(w<900){
-										$('body').css('height',hc+100);	
+										$('body').css('height',hc+150);	
 									}
-									$('.project_services_overlay').css('height',hc+100);
+									$('.project_services_overlay').css('height',hc+150);
 			  					}
 			  				});
  
@@ -902,11 +925,16 @@ function set_page_projects(){
 
 			  				$('.arrow').fadeIn();
 		  					$('.project_dotted').addClass('dotted_top').removeClass('title_dotted')
-		  					$('.dotted_project_right_out, .dotted_project_container').fadeIn();
+		  					$('.dotted_project_right_out, .dotted_project_container,#close_nav').fadeIn();
 		  					$('.project_services_overlay').fadeOut();
 		  					$('#project_services_close').fadeOut('slow');
 		  					$('#project_services_container').html('');
 
+		  					$('body').bind('mousewheel',MouseWheelHandler);
+		  						$('body').bind('DOMMouseScroll',MouseWheelHandler);
+		  						$('header').css('position','fixed')
+		  						$('.project_services_overlay').css('height','100%');
+		  						$('body').css('height','100%');	
 
 
 						break;
@@ -929,6 +957,10 @@ function set_page_projects(){
 				        break;
 
 				        case 38: // up
+
+				        if($('.project_services_overlay').is(':visible')){
+				        	return false;
+				        }
 				        
 				        $('#updown').trigger("prev", 1); 
 				        $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[0].id).data().title)
@@ -938,6 +970,10 @@ function set_page_projects(){
 
 				        case 40: // down
 				        
+				        if($('.project_services_overlay').is(':visible')){
+				        	return false;
+				        }
+
 				        $('#updown').trigger("next", 1);
 				        $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[1].id).data().title)
 				        $('#navigation_guide').fadeOut(900);
