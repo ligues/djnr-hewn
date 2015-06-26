@@ -257,6 +257,9 @@ function set_page_home(){
 				    $('#services_slider').show();
 				  });
 
+
+				  $(document).keydown().off();
+
 	        	$(document).keydown(function(e) {
 				    switch(e.which) {
 				    	
@@ -434,7 +437,8 @@ function set_page_about(){
 					swipe: true
 	        	});
 
-	        	
+	        	$(document).keydown().off();
+
 	        	$(document).keydown(function(e) {
 				    switch(e.which) {
 				    	
@@ -681,7 +685,7 @@ function set_page_projects(){
 				setTimeout(function() {
 				     	$('#navigation_guide').fadeOut(900);
 						$('.arrow.down').fadeIn(900);
-				 }, 5000);
+				 }, 10000);
 
 				if(isMobile.any()){
 					$('.fullscreen').hide();
@@ -917,6 +921,7 @@ function set_page_projects(){
 		  		})
 
 				//$(window).resize();
+				$(document).keydown().off();
 
 				$(document).keydown(function(e) {
 				    switch(e.which) {

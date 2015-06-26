@@ -835,6 +835,9 @@ footer .column_right .dotted{
 	left: 10px;
 	margin: auto;
 	background-image: url('../img/left.png');
+	padding: 100px 100px 100px 0px;
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
 .arrow.right{
@@ -843,6 +846,9 @@ footer .column_right .dotted{
 	right: 10px;
 	margin: auto;
 	background-image: url('../img/right.png');
+	padding: 100px 0px 100px 100px;
+	background-repeat: no-repeat;
+	background-position: right center;
 }
 
 .arrow.down{
@@ -852,6 +858,9 @@ footer .column_right .dotted{
 	margin: auto;
 	display: none;
 	background-image: url('../img/down.png');
+	padding: 100px 100px 0px 100px;
+	background-repeat: no-repeat;
+	background-position: center bottom;
 
 }
 

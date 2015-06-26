@@ -24,8 +24,8 @@
 					Knowledge and Master Craftsmanship
 				</div>
 				<div class="about_links">
-					<a href="#" id="shop_link" >Shop</a>
-					<a href="#" id="team_link" >Personnel</a>
+					<a href="#" id="shop_link" >Our Shop</a>
+					<a href="#" id="team_link" >Our Team</a>
 				</div>
 	        </div>
 	    </div>
@@ -55,65 +55,9 @@
 </div>
 
 
-<!--
 
-<header class="fixed"  style="position:fixed; top:0;left:0; background-color:#BDBEC0; height:210px"> 
-    <div class="column column_left">
-    	<div class="logo black uppercase"><a href="home" id="btn_home">HEWN</a></div>
-		<div class="dotted">
-		    <nav class="content_dotted">
-		        <a href="services" id="btn_services" class="bold uppercase">Services</a>
-		        <a href="projects" id="btn_projects" class="bold uppercase">Projects</a><br/>
-		        <a href="about" id="btn_about" class="bold uppercase active_link">About</a>
-		        <a href="store" id="btn_store" class="bold uppercase">Store</a>
-		    </nav>
-		    <div class="address">
-		        <span>+1 512_386_6404</span>
-		        <a href="mailto:info@hewnaustin.com">info@hewnaustin.com</a>
-		    </div>
-		</div>
-        
-    </div>
-    <div class="column column_center"></div>
-    <div class="column column_right">
-        
-        <div class="dotted">
-        	<div class="content_dotted">
-				Veritable Experience, Encyclopedic <br>
-				Knowledge and Master Craftsmanship
-			</div>
-			<div class="about_links">
-				<a href="#" id="shop_link" >Shop</a>
-				<a href="#" id="team_link" >Personnel</a>
-			</div>
-        </div>
-    </div>
-
-</header> 
-
-<div class="header_mobile">
-	<div class="logo_mobile">HEWN</div><div class="menu_mobile"></div>
-</div>
-<div class="title_mobile">
-	Veritable Experience, Encyclopedic <br>
-	Knowledge and Master Craftsmanship
-</div>
--->
 <div class="container" >
 
-<!--
-	<div class="about_slides_container">
-		<div id="about_slides">
-			{{#each slider_pictures}}
-		    <div class="about_slide" style="background-position:center center;height:500px;background-size:cover;background-image:url({{this.picture.url}});"></div>
-		    {{/each}}
-		</div>
-		<div class="arrow left" style="z-index:0"></div>
-		<div class="arrow right" style="z-index:0"></div>
-	</div>
-
-
--->
 	<div class="about_page services_list" style="margin-bottom:10px">
 		<div class="column column_left">
 	        
@@ -154,7 +98,7 @@
 		<div>__</div>
 		<ul>
 			{{#each team_members}}
-			<li>{{this.name}}<br/>{{this.position}}</li>
+			<li>{{this.name}}<br/>{{this.position}}<br/><a href="mailto:{{this.email}}">{{this.email}}</a></li>
 			{{/each}}
 		</ul>
 	</div>
