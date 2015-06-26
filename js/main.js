@@ -32,6 +32,25 @@ var isMobile = {
     }
 };
 
+//GA
+
+// Function to load and initiate the Analytics tracker
+function gaTracker(id){
+  $.getScript('//www.google-analytics.com/analytics.js'); // jQuery shortcut
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', id, 'auto');
+  ga('send', 'pageview');
+}
+
+// Function to track a virtual page view
+function gaTrack(path, title) {
+  ga('set', { page: path, title: title });
+  ga('send', 'pageview');
+}
+
+// Initiate the tracker after app has loaded
+gaTracker('UA-48073594-1');
+
 $(document).ready(function() {
 
 	History.Adapter.bind(window,'statechange',function(){ 
@@ -193,6 +212,8 @@ function set_page_home(){
 	if(page=="home"){
 		return;
 	}
+
+	gaTrack('/', 'Home');
 
 	$('.loader').fadeIn();
 
@@ -384,6 +405,8 @@ function set_page_about(){
 		return;
 	}
 
+	gaTrack('/', 'About');
+
 	$('.loader').fadeIn();
 	v = Math.floor((Math.random() * 1000) + 1)
 	$.ajax({
@@ -536,6 +559,8 @@ function set_page_services(){
 		return;
 	}
 
+	gaTrack('/', 'Services');
+
 	$('.loader').fadeIn();
 	v = Math.floor((Math.random() * 1000) + 1)
 	$.ajax({
@@ -656,6 +681,8 @@ function set_page_projects(){
 	if(page=="projects"){
 		return;
 	}
+
+	gaTrack('/', 'Projects');
 
 	$('.loader').fadeIn();
 	v = Math.floor((Math.random() * 1000) + 1)
@@ -1037,6 +1064,8 @@ function set_page_store(){
 	if(page=="store"){
 		return;
 	}
+
+	gaTrack('/', 'Store');
 
 	$('.loader').fadeIn();
 	v = Math.floor((Math.random() * 1000) + 1)
