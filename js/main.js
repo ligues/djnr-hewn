@@ -597,14 +597,14 @@ function set_page_services(){
 					})
 				});
 
-				jQuery.each($('.services_list .letter'), function() {
+				/*jQuery.each($('.services_list .letter'), function() {
 					var obj = new Object();
 					if(this.attributes["data-letter"]){
 						obj["letter"] = this.attributes["data-letter"].nodeValue;
 						obj["position"] = $(eval('scroll_'+this.attributes["data-letter"].nodeValue)).offset().top
 						scroll_positions.push(obj)
 					}
-				});
+				});*/
 
 				$(".letter_links a").click(function(e) {
 					e.preventDefault();
@@ -628,11 +628,19 @@ function set_page_services(){
 					}
 				});
 
+
 				$('.loader').fadeOut(1200);
+
+				setTimeout(function() {
+				     $(window).resize();
+				 }, 5000);
+
+				
 
 			})
 		}
 	});	
+	
 	
 	set_buttons();
 
