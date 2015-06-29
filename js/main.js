@@ -848,7 +848,7 @@ function set_page_projects(){
 		  			e.preventDefault();
 
 		  			$('#navigation_guide').fadeOut(900);
-		  			$('.arrow.down').fadeIn(900);
+		  			
 		  			$('#close_nav').fadeOut()
 
 
@@ -860,7 +860,7 @@ function set_page_projects(){
 
 		  			$('.arrow').fadeOut();
 		  			e.preventDefault();
-		  			project_services['project_services'] = $('#project_'+$('#updown').children('div')[0].id).data().services.split(",")
+		  			project_services['project_services'] = $('#project_'+$('#updown').children('div')[0].id).data().services.split("|")
 
 		  			$('.project_dotted').addClass('title_dotted').removeClass('dotted_top')
 
@@ -1221,16 +1221,16 @@ function resize_home(){
 }
 
 function center_map(){
-    var center = new google.maps.LatLng(30.3077609,-97.7534014);
+    var center = new google.maps.LatLng(39.1661486,-99.2593777);
     map.panTo(center);
 }
 
 function set_map(){
 	
 	var project;
-	var latlng = new google.maps.LatLng(30.3077609,-97.7534014);
+	var latlng = new google.maps.LatLng(39.1661486,-99.2593777);
     var myOptions = {
-        zoom: 12,
+        zoom: 5,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         overviewMapControl: false,
