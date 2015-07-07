@@ -3,6 +3,8 @@
 Template Name: Projects Template
 */
 
+$id = get_the_ID();
+
 ?>
 
 <?php get_header(); ?>
@@ -13,8 +15,7 @@ var data;
 
 $(document).ready(function() {
 
-	set_page_projects(0);
-		
+	set_page_projects(<?php echo $id; ?>);
 })
 
 $(window).resize(function() {

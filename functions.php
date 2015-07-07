@@ -100,8 +100,8 @@ function create_post_type_projects() {
 				'singular_name' => __( 'project' )
 			),
 			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'projects_list'),
+			'has_archive' => false,
+			'rewrite' => array('slug' => 'projects'),
 			'supports' => array( 'revisions','title', 'editor')
 		)
 	);
@@ -227,6 +227,9 @@ add_action('wp_ajax_get_projects', 'get_projects');
 
 function get_projects(){
 
+
+	$_id = $_REQUEST["id"];
+
 	$args = array(
 		'post_type'		=> 'projects',
 		'posts_per_page'=> -1,
@@ -236,15 +239,33 @@ function get_projects(){
 
 	$data = get_posts($args);
 	$items = NULL;
+
 	for($i=0;$i<count($data);$i++){
 		$id = $data[$i]->ID;
-		$items[$i]['id'] = $id;
-		$items[$i]['title'] = $data[$i]->post_title;
-		$items[$i]['content'] = $data[$i]->post_title;//$data[$i]->post_content;
-		$items[$i]['pictures'] = get_field('pictures',$id);
-		$items[$i]['services'] = get_field('services',$id);
-		$items[$i]['location'] = get_field('location',$id);
+		if($id!=$_id){
+			$items[$i]['id'] = $id;
+			$items[$i]['title'] = $data[$i]->post_title;
+			$items[$i]['permalink'] = get_permalink($id);
+			$items[$i]['content'] = $data[$i]->post_title;//$data[$i]->post_content;
+			$items[$i]['pictures'] = get_field('pictures',$id);
+			$items[$i]['services'] = get_field('services',$id);
+			$items[$i]['location'] = get_field('location',$id);
+		}
+		else{
+			$pro['id'] = $id;
+			$pro['title'] = $data[$i]->post_title;
+			$pro['permalink'] = get_permalink($id);
+			$pro['content'] = $data[$i]->post_title;//$data[$i]->post_content;
+			$pro['pictures'] = get_field('pictures',$id);
+			$pro['services'] = get_field('services',$id);
+			$pro['location'] = get_field('location',$id);	
+		}
 	}   
+
+	if($_id!=0){
+		array_unshift($items, $pro);
+	}
+
 
 	$args = array(
 		'post_type'		=> 'markers',
@@ -392,4 +413,6 @@ function get_id_by_slug($page_slug) {
 		return null;
 	}
 }
+
+
 

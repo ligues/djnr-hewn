@@ -130,7 +130,7 @@ function set_buttons(){
 		$('.menu_links').unbind('touchmove');
 		$("body").css("overflow-y", "visible");
 		$('.menu_links').fadeOut();
-		History.pushState(null, "home",WP+"/"); 
+		History.pushState(null, "home",WP+"/");
 		set_page_home();
 	})
 
@@ -163,7 +163,7 @@ function set_buttons(){
 		$("body").css("overflow-y", "visible");
 		$('.menu_links').fadeOut();
 		clearInterval(interval);
-		set_page_projects();
+		set_page_projects(0);
 	})
 
 	$('#btn_store,#btn_store_mobile').click(function(e){
@@ -195,7 +195,7 @@ function set_buttons(){
 		e.preventDefault();
 		History.pushState(null, null,WP+"/projects"); 
 		clearInterval(interval);
-		set_page_projects();
+		set_page_projects(0);
 	})
 
 	$('#link_store').click(function(e){
@@ -676,11 +676,13 @@ function set_page_services(){
 	page = "services";
 }
 
-function set_page_projects(){
+function set_page_projects(_id){
 
 	if(page=="projects"){
 		return;
 	}
+
+	
 
 	gaTrack('/', 'Projects');
 
@@ -690,7 +692,7 @@ function set_page_projects(){
 	$.ajax({
 		url:  WP+"/wp-admin/admin-ajax.php",
 		method: 'post',
-		data: {action:"get_projects"}, 
+		data: {action:"get_projects",id:_id},  
 		success: function(result) {
 			getTemplateAjax( theme + '/templates/projects.handlebars?v='+v, function(template) {
 				data = jQuery.parseJSON(result);
@@ -753,6 +755,10 @@ function set_page_projects(){
 		        	}
 		        	$('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[1].id).data().title)
 					$('#updown').trigger("next", 1);
+
+					gaTrack('/projects/', $('#project_'+$('#updown').children('div')[1].id).data().title);
+					History.pushState(null, null,$('#project_'+$('#updown').children('div')[1].id).data().permalink); 
+
 				})
 
 				$('.arrow.right').click(function(e){
@@ -811,7 +817,7 @@ function set_page_projects(){
 					scroll: {
 						easing: "easeInOutCubic",
 						//easing: "easeOutCubic",
-						//fx              : "linear",
+						//fx              : "linear", 
         				duration        : 500,
         				wipe        : true,
         				mousewheel  : true
@@ -819,7 +825,7 @@ function set_page_projects(){
 					}/*,
 					swipe       : {
 		                onTouch     : true,
-		                onMouse     : true
+		                onMouse     : true 
 		            }*/
 	        	});
 
@@ -828,10 +834,14 @@ function set_page_projects(){
 		            swipeDown: function() {
 		                $('#updown').trigger('prev', true);
 		                $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[0].id).data().title)
+		                gaTrack('/projects/', $('#project_'+$('#updown').children('div')[0].id).data().title);
+		                History.pushState(null, null,$('#project_'+$('#updown').children('div')[0].id).data().permalink); 
 		            },
 		            swipeUp: function() {
 		                $('#updown').trigger('next', true);
 		                $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[1].id).data().title)
+		                gaTrack('/projects/', $('#project_'+$('#updown').children('div')[1].id).data().title);
+		                History.pushState(null, null,$('#project_'+$('#updown').children('div')[1].id).data().permalink); 
 		            }
 		        });
 				
@@ -986,6 +996,7 @@ function set_page_projects(){
 						$('#project_'+current_slider).trigger("prev", 1);
 						$('#navigation_guide').fadeOut(900);
 						$('.arrow.down').fadeIn(900);
+
 						break;
 
 				        case 39: // right
@@ -1006,6 +1017,8 @@ function set_page_projects(){
 				        $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[0].id).data().title)
 				        $('#navigation_guide').fadeOut(900);
 				        $('.arrow.down').fadeIn(900);
+				        gaTrack('/projects/', $('#project_'+$('#updown').children('div')[0].id).data().title);
+				        History.pushState(null, null,$('#project_'+$('#updown').children('div')[0].id).data().permalink); 
 				        break;
 
 				        case 40: // down
@@ -1018,6 +1031,8 @@ function set_page_projects(){
 				        $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[1].id).data().title)
 				        $('#navigation_guide').fadeOut(900);
 				        $('.arrow.down').fadeIn(900);
+				        gaTrack('/projects/', $('#project_'+$('#updown').children('div')[1].id).data().title);
+				        History.pushState(null, null,$('#project_'+$('#updown').children('div')[1].id).data().permalink); 
 				        break;
 
 				        default: return; // exit this handler for other keys
@@ -1457,6 +1472,8 @@ function MouseWheelHandler(e) {
         if( wheel_i == 2 ) {                  
             $('#updown').trigger("prev", 1); 
 	        $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[0].id).data().title)
+	        gaTrack('/projects/', $('#project_'+$('#updown').children('div')[0].id).data().title);
+	        History.pushState(null, null,$('#project_'+$('#updown').children('div')[0].id).data().permalink); 
 	        $('#navigation_guide').fadeOut(900);
 	        $('.arrow.down').fadeIn(900);
         }           
@@ -1468,6 +1485,8 @@ function MouseWheelHandler(e) {
         if(wheel_i==-2) {     
             $('#updown').trigger("next", 1); 
 	        $('#project_title,#project_title_mobile').html($('#project_'+$('#updown').children('div')[1].id).data().title)
+	        gaTrack('/projects/', $('#project_'+$('#updown').children('div')[1].id).data().title);
+	        History.pushState(null, null,$('#project_'+$('#updown').children('div')[1].id).data().permalink); 
 	        $('#navigation_guide').fadeOut(900);
 	        $('.arrow.down').fadeIn(900);
         }               
@@ -1522,6 +1541,8 @@ function slide_to(i){
 	$('#updown').trigger('slideTo', '#slider_'+i);
 
 	$('#project_title,#project_title_mobile').html($('#slider_'+i+'> div > div').data().title)
+	gaTrack('/projects/', $('#slider_'+i+'> div > div').data().title);
+	History.pushState(null, null,$('#slider_'+i+'> div > div').data().permalink); 
 
 	$('.project_map').addClass('close');
 
