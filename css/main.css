@@ -267,6 +267,11 @@ header .map a{
 
 .medium{
 	font-family: 'Colfax_medium';
+	white-space: normal;
+}
+
+.title_service{
+	white-space: normal;
 }
 
 .uppercase{
@@ -512,6 +517,11 @@ footer .column_right .dotted{
 .services_list{
 	margin-top:180px; 
 	margin-bottom: 40px;
+	white-space:nowrap;
+}
+
+.services_list.services{
+	white-space: normal;
 }
 
 .services_list .column_left{

@@ -427,13 +427,23 @@ function set_page_about(){
 
 				
 				if(w<900){
-					$('.services_list .column_right .single_dotted').width(w-125);		
-				}
+						$('.about_page.services_list .column_right .single_dotted').width(w-125);
+						$('.services_list.people .column_right .single_dotted').width(w-125);
+					}
+					else{
+						$('.about_page.services_list .column_right .single_dotted').width(w-425);
+						$('.services_list.people .column_right .single_dotted').width(w-390);
+					}
 
 				$(window).bind("resize", function(){
 
 					if(w<900){
-						$('.services_list .column_right .single_dotted').width(w-125);		
+						$('.about_page.services_list .column_right .single_dotted').width(w-125);
+						$('.services_list.people .column_right .single_dotted').width(w-125);
+					}
+					else{
+						$('.about_page.services_list .column_right .single_dotted').width(w-425);
+						$('.services_list.people .column_right .single_dotted').width(w-390);
 					}
 				
 				});
