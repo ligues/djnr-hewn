@@ -627,13 +627,29 @@ function set_page_services(){
 					var waypoint = new Waypoint({
 					  element: document.getElementById(this.id),
 					  handler: function(direction) {
-					    $('.letter_links a').removeClass('active_link');
-					    $('#'+$(this)[0].element.attributes["data-letter"].nodeValue).addClass("active_link")
-					    letter = $(this)[0].element.attributes["data-letter"].nodeValue.substr($(this)[0].element.attributes["data-letter"].nodeValue.length-1)
-						$('#letter_header .letter').html(letter)
+					  	if (direction === 'down'){
+						    $('.letter_links a').removeClass('active_link');
+						    $('#'+$(this)[0].element.attributes["data-letter"].nodeValue).addClass("active_link")
+						    letter = $(this)[0].element.attributes["data-letter"].nodeValue.substr($(this)[0].element.attributes["data-letter"].nodeValue.length-1)
+							$('#letter_header .letter').html(letter)
+						}
 					  },
   						offset: 179
 					})
+
+					var waypoint = new Waypoint({
+					  element: document.getElementById(this.id),
+					  handler: function(direction) {
+					  	if (direction === 'up'){
+						    $('.letter_links a').removeClass('active_link');
+						    $('#'+$(this)[0].element.attributes["data-letter"].nodeValue).addClass("active_link")
+						    letter = $(this)[0].element.attributes["data-letter"].nodeValue.substr($(this)[0].element.attributes["data-letter"].nodeValue.length-1)
+							$('#letter_header .letter').html(letter)
+						}
+					  },
+  						offset: 170
+					})
+
 				});
 
 				/*jQuery.each($('.services_list .letter'), function() {
@@ -649,6 +665,7 @@ function set_page_services(){
 					e.preventDefault();
 					var scroll = 0;
 					var link = this;
+
 					jQuery.each( scroll_positions  ,function(key,value){
 						if(value.letter==link.id){
 							scroll = value.position
@@ -672,7 +689,7 @@ function set_page_services(){
 
 				setTimeout(function() {
 				     $(window).resize();
-				 }, 5000);
+				 }, 500);
 
 				
 

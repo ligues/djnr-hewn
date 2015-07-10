@@ -842,7 +842,7 @@ footer .column_right .dotted{
 .arrow.left{
 	top: 0;
 	bottom: 0;
-	left: 10px;
+	left: 20px;
 	margin: auto;
 	background-image: url('../img/left.png');
 	padding: 100px 100px 100px 0px;
@@ -853,7 +853,7 @@ footer .column_right .dotted{
 .arrow.right{
 	top: 0;
 	bottom: 0;
-	right: 10px;
+	right: 20px;
 	margin: auto;
 	background-image: url('../img/right.png');
 	padding: 100px 0px 100px 100px;
@@ -863,7 +863,7 @@ footer .column_right .dotted{
 
 .arrow.down{
 	left: 0;
-	bottom: 10px;
+	bottom: 20px;
 	right: 0;
 	margin: auto;
 	display: none;
@@ -876,7 +876,7 @@ footer .column_right .dotted{
 
 #navigation_guide{
 	position: absolute;
-	bottom: 10px;
+	bottom: 20px;
 	right: 0;
 	left: 0;
 	z-index: 2000;
