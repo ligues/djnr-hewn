@@ -50,6 +50,13 @@
     <div class="loader">
         <div class="loader_image"></div>
     </div>
+    
+    <nav style="display:none">
+        <a href="/">HOME</a>
+        <a href="/services">SERVICES</a>
+        <a href="/about">ABOUT</a>
+        <a href="/projects">PROJECTS</a>
+    </nav>
 
 
         
